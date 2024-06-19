@@ -1,0 +1,23 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+fstream st;
+st.open("d:\a.txt",ios::in);
+if(!st)
+{
+cout<<"file not found\n";
+}
+else
+{
+char ch;
+while(!st.eof())
+{
+st>>ch;
+cout<<ch;
+}
+st.close();
+}
+return 0;
+}

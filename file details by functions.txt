@@ -1,0 +1,38 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+fstream st;
+st.open("d:\a.txt",ios::out);
+if(!st)
+{
+cout<<"file not found\n";
+}
+else
+{
+cout<<"created\n";
+st<<"welcome\n";
+cout<<"file pointer positon :"<<st.tellp()<<endl;
+st.seekp(-1,ios::cur);
+cout<<"file pointer positon from present cursor postion :"<<st.tellp()<<endl;
+st.close();
+}
+
+st.open("d:\a.txt",ios::in);
+if(!st)
+{
+cout<<"file not found\n";
+}
+else
+{
+cout<<"file created\n";
+char ch;
+st.seekg(5,ios::beg);
+cout<<"file pointer positon from begining :"<<st.tellg()<<endl;
+st.seekp(1,ios::cur);
+cout<<"file pointer positon from present cursor postion :"<<st.tellg()<<endl;
+st.close();
+}
+return 0;
+}u

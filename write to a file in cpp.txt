@@ -1,0 +1,19 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+fstream st;
+st.open("d:\a.txt",ios::out);
+if(!st)
+{
+cout<<"file not found\n";
+}
+else
+{
+cout<<"new file created\n";
+st<<"hello\n";
+st.close();
+}
+return 0;
+}

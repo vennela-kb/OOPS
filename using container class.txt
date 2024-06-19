@@ -1,0 +1,70 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+class baseinfo
+{
+private:
+char name[20];
+int rollno;
+char gender;
+public:
+void getdata();
+void display();
+};
+class academic                                                            
+{
+private:
+char course[25];
+char semester[25];
+public:
+void getdata();
+void display();
+};
+class finance
+{
+private:
+baseinfo abc;
+academic def;
+float amount;
+public:
+void getdata();
+void display();
+};
+void baseinfo::getdata()
+{
+cout<<"enter name,rollnumber and gender"<<endl;
+cin>>name>>rollno>>gender;
+}
+void baseinfo::display()
+{
+cout<<"NAME=="<<name<<endl<<"ROLLNO=="<<rollno<<endl<<"GENDER=="<<gender<<endl;
+}
+void academic::getdata()
+{
+cout<<"enter course and sem"<<endl;
+cin>>course>>semester;
+}
+void academic::display()
+{
+cout<<"COURSE=="<<course<<endl<<"SEMESTER=="<<semester<<endl;
+}
+void finance::getdata()
+{
+abc.getdata();
+def.getdata();
+cout<<"ENTER AMOUNT"<<endl;
+cin>>amount;
+}
+void finance::display()
+{
+abc.display();
+def.display();
+cout<<"AMOUNT=="<<amount<<endl;
+}
+int main()
+{
+finance f;
+cout<<"ENTER THE FOLLOWING DATA"<<endl;
+f.getdata();
+f.display();
+}

@@ -1,0 +1,14 @@
+#include<iostream>
+#include<fstream>
+#include<iterator>
+#include<vector>
+using namespace std;
+int main()
+{
+vector<int> ar={1,2,3,4,5};
+vector<int>::iterator ptr=ar.begin();
+advance(ptr,3);
+cout<<"postion of iterator after advancing:";
+cout<<*ptr<<" ";
+return 0;
+}
